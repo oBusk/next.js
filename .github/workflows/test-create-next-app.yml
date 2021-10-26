@@ -1,0 +1,16 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 0,12 * * *'
+
+name: Test create-next-app
+
+jobs:
+  check-examples:
+    name: Check examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install --frozen-lockfile --check-files
+      - name: Check examples
+        run: ./scripts/check-examples.sh

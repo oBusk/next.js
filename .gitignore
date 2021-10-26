@@ -39,3 +39,6 @@ test-timings.json
 # Vercel
 .vercel
 .now
+
+# test-create-next-app
+__create-next-app-test__/
